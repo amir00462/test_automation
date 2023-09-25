@@ -1,29 +1,20 @@
-name: Build and Release APK
+name: Build and Test
 
-on: 
+on:
   push:
     branches:
-      - develop
-
-  pull_request:
-    branches:  
-      - production
+      - main  # Change this to your main branch name
 
 jobs:
-
   build:
-  
     runs-on: ubuntu-latest
 
     steps:
-    
-    - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up JDK
-      uses: actions/setup-java@v3
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-        
-    - name: Build debug APK
-      run: ./gradlew assembleDebug
+      - name: Set execute permission on gradlew
+        run: chmod +x ./gradlew
+
+      - name: Build and test
+        run: ./gradlew assembleDebug testDebugUnitTest
