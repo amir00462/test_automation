@@ -21,7 +21,7 @@ jobs:
     - name: Set up JDK  
       uses: actions/setup-java@v3
       with:
-        java-version: '11'
+        java-version: '8'
         distribution: 'temurin'
         
     - name: Grant execute permission for gradlew  
@@ -42,7 +42,7 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v3
       with:
-        java-version: '11'
+        java-version: '8'
         distribution: 'temurin'
         
     - name: Build debug APK
@@ -67,7 +67,7 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v3
       with:
-        java-version: '11'
+        java-version: '8'
         distribution: 'temurin'
         
     - name: Build release APK
